@@ -1,4 +1,4 @@
-# DamasFinalMiniProyecto
+# Damas
     📆Este es mi proyecto de salida para el intellysis con motivo de pasantia 
     📦Estoy utilizando los paquete por default de python 
     🐛Estoy trabajando para mejorar su experiencia y no tenga bug corriendo el programa 
