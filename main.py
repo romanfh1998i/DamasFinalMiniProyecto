@@ -54,9 +54,9 @@ class movimiento:
             print("X turno ")
             x = int(input("Entra el numero fila:"))
             y = int(input("Entra el numero columna:"))
-            if (str(Matrix[x][y]) == "x"):
+            if (str(Matrix[x][y]) == "X"):
                 if (not y == 7 and not y == 0):
-                    self.movimientoDerecha = True
+
                     if (str(Matrix[x + 1][y + 1]) == " "):
                         self.movimientoIzquierda = True
                     if (str(Matrix[x + 1][y - 1]) == " "):
@@ -114,32 +114,35 @@ class movimiento:
                             self.respuesta = "D"
                     else:
                         self.respuesta = "I"
-                if (any([self.respuesta == "D", self.respuesta == "I"])):
-                    if (self.respuesta == "D"):
-                        Matrix[x + 1][y + 1] = " "
-                        Matrix[x + 2][y + 2] = "X"
-                        p.printMatrix(Matrix)
+                    if (any([self.respuesta == "D", self.respuesta == "I"])):
+                        if (self.respuesta == "D"):
+                            Matrix[x + 1][y + 1] = " "
+                            Matrix[x + 2][y + 2] = "X"
+                            p.printMatrix(Matrix)
+                        else:
+                            Matrix[x + 1][y - 1] = " "
+                            Matrix[x + 2][y - 2] = "X"
+                            p.printMatrix(Matrix)
+                    if (not y > 5 and not y < 2):
+                        if (str(Matrix[x + 1][y + 1]) == "O" and not str(Matrix[x + 2][y + 2]) == "O" and not str(
+                                Matrix[x + 2][y + 2]) == "X"):
+                            self.cutderecha = True
+                        if (str(Matrix[x + 1][y - 1]) == "O" and not str(Matrix[x + 2][y - 2]) and not str(
+                                Matrix[x + 2][y - 2]) == "X"):
+                            self.cutIzquierda = True
+                    elif (y > 5):
+                        if (str(Matrix[x + 1][y - 1]) == "O" and not str(Matrix[x + 2][y - 2]) == "O" and not str(
+                                Matrix[x + 2][y - 2]) == "X"):
+                            self.cutIzquierda = True
                     else:
-                        Matrix[x + 1][y - 1] = " "
-                        Matrix[x + 2][y - 2] = "X"
-                        p.printMatrix(Matrix)
-                if (not y > 5 and not y < 2):
-                    if (str(Matrix[x + 1][y + 1]) == "O" and not str(Matrix[x + 2][y + 2]) == "O" and not str(
-                            Matrix[x + 2][y + 2]) == "X"):
-                        self.cutderecha = True
-                    if (str(Matrix[x + 1][y - 1]) == "O" and not str(Matrix[x + 2][y - 2]) and not str(
-                            Matrix[x + 2][y - 2]) == "X"):
-                        self.cutIzquierda = True
-                elif (y > 5):
-                    if (str(Matrix[x + 1][y - 1]) == "O" and not str(Matrix[x + 2][y - 2]) == "O" and not str(
-                            Matrix[x + 2][y - 2]) == "X"):
-                        self.cutIzquierda = True
+                        if (str(Matrix[x + 1][y + 1]) == "O" and not str(Matrix[x + 2][x - 2]) == "O" and not str(
+                                Matrix[x + 2][y + 2]) == "X"):
+                            self.cutderecha = True
                 else:
-                    if (str(Matrix[x + 1][y + 1]) == "O" and not str(Matrix[x + 2][x - 2]) == "O" and not str(
-                            Matrix[x + 2][y + 2]) == "X"):
-                        self.cutderecha = True
+                    print("movimiento incorrecto")
+                    movimientoX(self)
             else:
-                print("movimiento incorrecto")
+                print("No es correcto")
                 movimientoX(self)
 
         def movimientoY(self):
