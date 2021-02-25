@@ -7,8 +7,9 @@
      Mini-proyecto a realizar: JUEGO DE DAMAS
              
    Estos son los requieremiento para Correr el proyecto se necesita :
-        Python 3.0
-   El juegos cuesta con 2 jugadores un jugador1 y un jugador2 que se tendra mover a base de las coordenas de las fila y la columna 
+        
+      Python 3.0
+    El juegos cuesta con 2 jugadores un jugador1 y un jugador2 que se tendra mover a base de las coordenas de las fila y la columna 
    Reglas del juego de Damas:
     Las damas es un juego para dos personas en un tablero de 64 casillas de 8×8 celdas (el mismo que se utiliza para jugar al ajedrez). El tablero se coloca de manera que cada     jugador tenga una casilla blanca en su parte inferior derecha.
 
